@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Relatório | Controlo da Aterragem Vertical de um Foguetão</title>
+<link rel="stylesheet" href="assets/css/aurora-pack.min.css">
+<link rel="stylesheet" href="assets/css/aurora-theme-base.min.css">
+<link rel="stylesheet" href="assets/css/index1.css">
+    <script src="https://kit.fontawesome.com/9a888c7a01.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<body class="top-fixed">
+  <div class="bandeirasukpt">
+    <div class="pt"><a href="planeamento.html"> <img src="./assets/img/portugal.svg" alt="" srcset=""></a></div>
+    <div class="uk"><a href="ENplaneamento.html"> <img src="./assets/img/united-kingdom.svg" alt="" srcset=""></a></div>
+  </div>
+
+<header class="ae-container-fluid ae-container-fluid--full rk-header ">
+  <div class="ae-container-fluid rk-topbar">
+    <h1 class="rk-logo"><a href="planeamento.html">Controlo da Aterragem Vertical de um Foguetão<sup>&nbsp&nbsp&nbsp Comunicar Ciência </sup></a></h1>
+  </div>
+</header>
+
+
+<section class="ae-container-fluid ae-container-fluid--full" style="overflow: hidden;">
+
+  <header class="rk-portfolio-cover  post-inside-1">
+    <div class="item-inside__meta"> </div>
+  </header>
+  <div class="ae-container-fluid">
+    <div class="ae-grid ae-grid--collapse rk-portfolio-info " style="margin-top: 15%;">
+      <div class="ae-grid__item item-lg-6 item-sm--center au-xs-ta-center au-lg-ta-left item-lg--offset-1">
+        <h2 style="color:#C66A03">Diagrama de Forças  </h2>
+        <h2>&nbsp;</h2>
+        
+      </div>
+    </div>
+  </div>
+  <div class="ae-container-fluid ae-container-fluid--inner ">
+
+    <div class="ae-grid ae-grid--collapse">
+      <div class="ae-grid__item item-lg-6"><img src="assets/img/DF_novo.png" ></div>
+      <div class="ae-grid__item item-lg-5 item-lg--offset-1 ">
+        
+        <p  style="text-align: justify">Para compreender o sistema que vamos simular é necessário perceber as forças que nele atuam e o impacto que estas terão no movimento do foguetão. A melhor forma de o fazer é utilizando um diagrama de forças.</p>
+        <p  style="text-align: justify"> No nosso caso, a duas dimensões é possível decompor o movimento do foguetão em três partes: translação em x, translação em y e rotação.</p>
+        <p style="text-align: justify"> Cada força aplicada no foguetão afetará cada um destes movimentos de forma diferente, que a seguir se discute.</p>
+          
+      
+
+
+      </div>
+    </div>
+  
+    <div class="ae-container-fluid">
+      <div class="ae-grid ae-grid--collapse rk-portfolio-info " style="margin-top: 15%;">
+        <div class="ae-grid__item item-lg-6 item-sm--center au-xs-ta-center au-lg-ta-left item-lg--offset-1" style="margin-left: 1.53%;">
+          <h2 style="color:#C66A03">Decomposição da Força do Side Thruster  </h2>
+          <h2>&nbsp;</h2>
+          
+        </div>
+      </div>
+    </div>
+    <div class="ae-container-fluid ae-container-fluid--inner ">
+  
+    
+          
+          <p  style="text-align: justify">Os Side Thrusters são localizados no topo do foguetão e são responsáveis por pequenas correções na sua inclinação. Não são muito poderosos e, portanto, têm um efeito algo reduzido no comportamento do objeto.</p>
+          
+          <div class="ae-grid ae-grid--collapse">
+            <div class="ae-grid__item item-lg-12" style="text-align: center;"><img src="assets/img/DF_Fs.png" ></div>
+            <div class="ae-grid__item item-lg-5 item-lg--offset-1 ">
+        </div>
+        <p style="text-align: justify">Para definir a sua influência no movimento convém começarmos por establecer algumas relações:</p>
+        <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+        <html>
+        <head>
+        <title>Mathedemo</title>
+        <script type="text/x-mathjax-config">
+          MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        <script type="text/javascript"
+          src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+        </head>
+        
+        <body>
+        
+        \begin{align*}
+        \alpha = \arctan{\frac{l_s}{h_s}}
+        \end{align*}
+        \begin{align*}
+        d_s = \sqrt{h_s^2 + l_s^2}
+        \end{align*}
+        
+        
+        <h2></h2>   
+        <p style="text-align: justify">Com isto, podemos então decompor a força aplicada nas suas componentes de rotação e translação:</p>
+        \begin{align*}
+        F_{s_{rot}} = F_s \cos{\alpha}
+        \end{align*}
+        \begin{align*}
+        F_{s_{trans}} = F_s  \sin{\alpha}
+        \end{align*}
+
+        <p style="text-align: justify">Temos ainda de decompor a componente de translação em translação em x e em y:</p>
+        \begin{align*}
+    F_{s_{trans_x}} &= F_{s_{trans}} \sin{\left(\alpha - \theta\right)} \\
+    &= F_{s_{trans}}\left[ \sin{\alpha}\cos{\theta} - \cos{\alpha}\sin{\theta} \right]
+\end{align*}
+\begin{align*}
+    F_{s_{trans_y}} &= F_{s_{trans}} \cos{\left(\alpha - \theta\right)} \\
+    &= F_{s_{trans}}\left[ \sin{\alpha}\sin{\theta} + \cos{\alpha}\cos{\theta} \right]
+\end{align*}
+      </div>
+      
+      <div class="ae-container-fluid">
+        <div class="ae-grid ae-grid--collapse rk-portfolio-info " style="margin-top: 15%;">
+          <div class="ae-grid__item item-lg-6 item-sm--center au-xs-ta-center au-lg-ta-left item-lg--offset-1" style="margin-left: 1.53%;">
+            <h2 style="color:#C66A03">Decomposição da Força do Main Thruster </h2>
+            <h2>&nbsp;</h2>
+            
+          </div>
+        </div>
+      </div>
+      <div class="ae-container-fluid ae-container-fluid--inner ">
+    
+      
+            
+            <p  style="text-align: justify">O Main Thruster é o principal responsável pelo movimento do foguetão na vertical, sendo o único com força suficiente para o travar. Também participa no movimento de translação e rotação, com a ajuda do ângulo da <i>nozzle</i>, $\varphi$, que inclina a saída do thruster de modo a aplicar a força em diferentes direções.</p>
+            
+            <div class="ae-grid ae-grid--collapse">
+              <div class="ae-grid__item item-lg-12" style="text-align: center;"><img src="assets/img/DF_Ft.png" ></div>
+              <div class="ae-grid__item item-lg-5 item-lg--offset-1 ">
+          </div>
+          <p  style="text-align: justify">Para definir a sua influência no movimento convém começarmos por establecer algumas relações:</p>
+
+          \begin{align*}
+    d_n &= \sqrt{\left(r_n\cos{\varphi} + h_n\right)^2 + \left( r_n\sin{\varphi} \right)^2} \\
+    &= \sqrt{r_n^2 + h_n^2 + 2r_nh_n\cos{\varphi}}
+\end{align*}
+$$ \beta = \arctan{\frac{r_n\sin{\varphi}}{r_n\cos{\varphi}+h_n}} $$
+
+<p  style="text-align: justify">Com isto, podemos então decompor a força aplicada nas suas componentes de rotação e translação:</p>
+
+$$ F_{T_{rot}} = F_T\sin{(\varphi - \beta)}$$
+$$ F_{T_{trans}} = F_T\cos{(\varphi - \beta)}$$
+
+<p  style="text-align: justify">Temos ainda de decompor a componente de translação em translação em x e em y:</p>
+
+\begin{align*}
+    F_{T_{trans_x}} &= -F_{T_{trans}}\sin{(\theta + \beta)}\\
+    &=-F_T\cos{(\varphi - \beta)\sin{(\theta + \beta)}}
+\end{align*}
+\begin{align*}
+    F_{T_{trans_y}} &= F_{T_{trans}}\cos{(\theta + \beta)}\\
+    &=F_T\cos{(\varphi - \beta)\cos{(\theta + \beta)}}
+\end{align*}
+</div>
+<div class="ae-container-fluid">
+  <div class="ae-grid ae-grid--collapse rk-portfolio-info " style="margin-top: 15%;">
+    <div class="ae-grid__item item-lg-6 item-sm--center au-xs-ta-center au-lg-ta-left item-lg--offset-1" style="margin-left: 1.53%;">
+      <h2 style="color:#C66A03">Descrição Matemática do Modelo</h2>
+      <h2>&nbsp;</h2>
+      
+    </div>
+  </div>
+</div>
+<div class="ae-container-fluid ae-container-fluid--inner ">
+
+
+      
+      <p  style="text-align: justify">Pelas leis de Newton, tem-se:</p>
+
+      \begin{align*}
+    &\sum F_{trans_x} = m\ddot{x} \\
+    &\sum F_{trans_y} = m\ddot{y} \\
+    &\sum T = I\ddot{\theta}\:,\:e\:T = F \cdot d
+\end{align*}
+
+<p  style="text-align: justify">Ora, com isto, obtêm-se as seguintes equações de movimento:</p>
+
+\begin{align*}
+    \ddot{x} &= \frac{F_{T_{trans_x}}}{m} + \frac{F_{s_{trans_x}}}{m} =\\
+    &= 
+    -\frac{F_T}{m}\cos{(\varphi - \beta)\sin{(\theta + \beta)}} +
+    \frac{F_s}{m}\sin{\alpha}\left[ \sin{\alpha}\cos{\theta} - \cos{\alpha}\sin{\theta} \right] \\
+    \\
+    \ddot{y} &= \frac{F_{T_{trans_y}}}{m} + \frac{F_{s_{trans_y}}}{m} =\\
+    &= \frac{F_T}{m}\cos{(\varphi - \beta)\cos{(\theta + \beta)}} - \frac{F_s}{m}  \sin{\alpha}\left[ \sin{\alpha}\sin{\theta} + \cos{\alpha}\cos{\theta} \right] \\
+    \\
+    \ddot{\theta} &= \frac{F_{T_{rot}}}{I}d_n + \frac{F_{s_{rot}}}{I}d_s =\\
+    &= -\frac{F_T}{I}d_n\sin{(\varphi - \beta)} - \frac{F_s}{I}d_s\cos{\alpha}
+\end{align*}
+
+<p  style="text-align: justify">Uma vez que o nosso sistema deverá sempre trabalhar com ângulos pequenos (até aproximadamente 30º), é possível fazer a aproximação de seno e cosseno para ângulos pequenos. Tendo, então, em conta que:</p>
+
+\begin{align*}
+    \theta \ll 1 &\implies \sin{\theta} \approx \theta \\
+                 &\implies \cos{\theta} \approx 1 \\
+    \varphi \ll 1 &\implies \sin{\varphi} \approx \varphi \\
+                &\implies \cos{\varphi} \approx 1 \\
+                &\implies \beta \ll 1 \\
+                &\implies \phi - \beta \ll 1 \\
+                &\implies \theta + \beta \ll 1
+\end{align*}
+
+<p  style="text-align: justify">Resultando:</p>
+
+\begin{align*}
+    \ddot{x} &= -\frac{F_T}{m}(\theta+\beta) + \frac{F_s}{m}\sin(\alpha)(\sin(\alpha)-\theta\cos(\alpha))
+    \\
+    \ddot{y} &=  \frac{F_T}{m} - \frac{F_s}{m} \sin(\alpha)  (\cos(\alpha)-\theta  \sin(\alpha))
+    \\
+    \ddot{\theta} &= -\frac{F_T}{I}d_n(\varphi-\beta) - \frac{F_s}{I}d_s\cos(\alpha)
+\end{align*}
+
+<p  style="text-align: justify">Obtêm-se três equações de segunda ordem que definem o modelo. No entanto, para a notação de espaço de estados é necessário que todas as equações sejam de primeira ordem. Definem-se, então, duas novas variáveis auxiliares, resultando:</p>
+
+\begin{align*}
+    \dot{x} &= v_x \\
+    \dot{v_x} &= -\frac{F_T}{m}(\theta+\beta) + \frac{F_s}{m}\sin(\alpha)(\sin(\alpha)-\theta\cos(\alpha)) \\
+    \dot{y} &= v_y \\
+    \dot{v_y} &= \frac{F_T}{m} - \frac{F_s}{m} \sin(\alpha)  (\cos(\alpha)-\theta  \sin(\alpha)) \\
+    \dot{\theta} &= \omega \\
+    \dot{\omega} &= -\frac{F_T}{I}d_n(\varphi-\beta) - \frac{F_s}{I}d_s\cos(\alpha)
+\end{align*}
+
+<p  style="text-align: justify">O sistema com que ficamos não é, de todo, linear. No entanto existe uma forma de o linearizar, recorrendo a uma linearização jacobiana.</p>
+<p  style="text-align: justify">Assim, pretende-se linearizar o sistema em torno de um ponto de equilíbrio. Este ponto será tal que para um dado estado de equilíbrio do sistema, $\overline{x}$, ao aplicar um dado input, $\overline{u}$, o sistema não altera o seu estado. Isto é, dada uma função, $f$, que define a variação do estado do sistema, $\dot{x}$, em função do seu estado atual, $x$, e do input que lhe é aplicado, $u$, tem-se:</p>
+
+\begin{align*}
+    \dot{x}(t) = f(x(t),u(t)) = 0 \:\:\:\text{, com }x=\overline{x} \:\text{e}\: u = \overline{u}
+\end{align*}
+
+<p style="text-align: justify">Com isto, a linearização pode ser feita em torno do ponto de equilíbrio e permanecerá válida desde que o sistema varie apenas ligeiramente em torno destes pontos. Primeiro definem-se as variáveis de desvio tal que</p>
+
+\begin{align*}
+    \delta_x &= x(t) - \overline{x} \\
+    \delta_u &= u(t) - \overline{u}
+\end{align*}
+
+<p style="text-align: justify">, obtendo-se</p>
+
+\begin{align*}
+    \dot{\delta}_x = f(\overline{x}-\delta_x(t), \overline{u}-\delta_u(t))
+\end{align*}
+
+<p style="text-align: justify">, por fim, realizando uma expansão de Taylor em torno do ponto de equilíbrio vem que</p>
+
+\begin{aligned}
+    \dot{\delta}_x &amp;\approx f(\overline{x},\overline{u}) + \left.\frac{\partial f}{\partial x}\right|_{%
+ \stackrel{\scriptscriptstyle x = \overline{x}}{\scriptscriptstyle u = \overline{u}}}\delta_x(t) + \left.\frac{\partial f}{\partial u}\right|_{%
+ \stackrel{\scriptscriptstyle x = \overline{x}}{\scriptscriptstyle u = \overline{u}}}\delta_u(t) \\
+ &amp;\approx \left.\frac{\partial f}{\partial x}\right|_{%
+ \stackrel{\scriptscriptstyle x = \overline{x}}{\scriptscriptstyle u = \overline{u}}}\delta_x(t) + \left.\frac{\partial f}{\partial u}\right|_{%
+ \stackrel{\scriptscriptstyle x = \overline{x}}{\scriptscriptstyle u = \overline{u}}}\delta_u(t)\end{aligned}
+
+<p style="text-align: justify">Com isto, definem-se as matrizes:</p>
+
+\begin{align*}
+    &A \equiv \left.\frac{\partial f}{\partial x}\right|_{%
+ \stackrel{\scriptscriptstyle x = \overline{x}}{\scriptscriptstyle u = \overline{u}}}\delta_x(t)
+ &B \equiv \left.\frac{\partial f}{\partial u}\right|_{%
+ \stackrel{\scriptscriptstyle x = \overline{x}}{\scriptscriptstyle u = \overline{u}}}\delta_u(t)
+\end{align*}
+
+<p style="text-align: justify">No nosso caso é fácil perceber qual é o ponto de equilíbrio: foguetão parado na vertical com o thruster principal a exercer uma força tal que contrarie o seu peso. Traduzindo em matrizes:</p>
+
+\begin{align*}
+    \overline{x} &= 
+    \begin{bmatrix}
+    x_0 \\
+    0   \\
+    y_0 \\
+    0   \\
+    0   \\
+    0   
+    \end{bmatrix}
+    &
+    \overline{u} &=
+    \begin{bmatrix}
+    mg \\
+    0   \\
+    0
+    \end{bmatrix}
+\end{align*}
+
+<p style="text-align: justify">Definem-se, então, as variáveis de desvio:</p>
+
+\begin{align*}
+    &\delta_x = 
+    \begin{bmatrix}
+    x \\
+    v_x \\
+    y \\
+    v_y \\
+    \theta \\
+    \omega
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+    x_0 \\
+    0   \\
+    y_0 \\
+    0   \\
+    0   \\
+    0   
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    x - x_0 \\
+    v_x \\
+    y - y_0 \\
+    v_y \\
+    \theta \\
+    \omega
+    \end{bmatrix}
+    &\delta_u =
+    \begin{bmatrix}
+    F_T \\
+    F_s \\
+    \varphi
+    \end{bmatrix}
+    -
+    \begin{bmatrix}
+    mg \\
+    0   \\
+    0
+    \end{bmatrix}
+    =
+    \begin{bmatrix}
+    F_T - mg \\
+    F_s \\
+    \varphi
+    \end{bmatrix}
+\end{align*}
+
+<p style="text-align: justify">E as matrizes:</p>
+
+\begin{align*}
+A' & = \begin{bmatrix}
+        \frac{\partial f_x}{\partial x} &  \frac{\partial f_x}{\partial v_x} &  \frac{\partial f_x}{\partial y} &  \frac{\partial f_x}{\partial v_y} & \frac{\partial f_x}{\partial \theta} & \frac{\partial f_x}{\partial \omega} \\
+        \frac{\partial f_{v_x}}{\partial x} &  \frac{\partial f_{v_x}}{\partial v_x} &  \frac{\partial f_{v_x}}{\partial y} &  \frac{\partial f_{v_x}}{\partial v_y} & \frac{\partial f_{v_x}}{\partial \theta} & \frac{\partial f_{v_x}}{\partial \omega} 
+        \\
+        \frac{\partial f_y}{\partial x} &  \frac{\partial f_y}{\partial v_x} &  \frac{\partial f_y}{\partial y} &  \frac{\partial f_y}{\partial v_y} & \frac{\partial f_y}{\partial \theta} & \frac{\partial f_y}{\partial \omega} \\
+        \frac{\partial f_{v_y}}{\partial x} &  \frac{\partial f_{v_y}}{\partial v_x} &  \frac{\partial f_{v_y}}{\partial y} &  \frac{\partial f_{v_y}}{\partial v_y} & \frac{\partial f_{v_y}}{\partial \theta} & \frac{\partial f_{v_y}}{\partial \omega} 
+        \\
+        \frac{\partial f_{\theta}}{\partial x} &  \frac{\partial f_{\theta}}{\partial v_x} &  \frac{\partial f_{\theta}}{\partial y} &  \frac{\partial f_{\theta}}{\partial v_y} & \frac{\partial f_{\theta}}{\partial \theta} & \frac{\partial f_{\theta}}{\partial \omega}\\ 
+        \frac{\partial f_{\omega}}{\partial x} &  \frac{\partial f_{\omega}}{\partial v_x} &  \frac{\partial f_{\omega}}{\partial y} &  \frac{\partial f_{\omega}}{\partial v_y} & \frac{\partial f_{\omega}}{\partial \theta} & \frac{\partial f_{\omega}}{\partial \omega}\\ 
+    \end{bmatrix}\\
+\end{align*}
+\begin{align*}
+    &=\left[\begin{array}{cccccc} 0 & 1 & 0 & 0 & 0 & 0\\ 0 & 0 & 0 & 0 & -\frac{F_{t}}{m}-\frac{F_{s}\,l_{s}}{h_{s}\,m\,\left(\frac{{l_{s}}^2}{{h_{s}}^2}+1\right)} & 0\\ 0 & 0 & 0 & 1 & 0 & 0\\ 0 & 0 & 0 & 0 & \frac{F_{s}\,{l_{s}}^2}{{h_{s}}^2\,m\,\left(\frac{{l_{s}}^2}{{h_{s}}^2}+1\right)} & 0\\ 0 & 0 & 0 & 0 & 0 & 1\\ 0 & 0 & 0 & 0 & 0 & 0 \end{array}\right]
+\end{align*}
+
+\begin{align*}
+    B' = \begin{bmatrix} 
+        \frac{\partial f_x}{\partial F_T} &  \frac{\partial f_x}{\partial F_s} &  \frac{\partial f_x}{\partial \varphi} \\
+        \frac{\partial f_{v_x}}{\partial F_T} &  \frac{\partial f_{v_x}}{\partial F_s} &  \frac{\partial f_{v_x}}{\partial \varphi} \\
+        \frac{\partial f_y}{\partial F_T} &  \frac{\partial f_y}{\partial F_s} &  \frac{\partial f_y}{\partial \varphi} \\
+        \frac{\partial f_{v_y}}{\partial F_T} &  \frac{\partial f_{v_y}}{\partial F_s} &  \frac{\partial f_{v_y}}{\partial \varphi} \\
+        \frac{\partial f_{\theta}}{\partial F_T} &  \frac{\partial f_{\theta}}{\partial F_s} &  \frac{\partial f_{\theta}}{\partial \varphi} \\
+        \frac{\partial f_{\omega}}{\partial F_T} &  \frac{\partial f_{\omega}}{\partial F_s} &  \frac{\partial f_{\omega}}{\partial \varphi} \\
+    \end{bmatrix}\\
+\end{align*}
+\begin{align*}
+    =\begin{matrix}
+\left[\begin{array}{ccc} 0 & 0 & 0\\ 
+-\frac{\theta +\mathrm{atan}\left(\frac{\phi \,r_{n}}{h_{n}+r_{n}}\right)}{m} & -\frac{l_{s}\,\left(\frac{\theta }{\sqrt{\frac{{l_{s}}^2}{{h_{s}}^2}+1}}-\frac{l_{s}}{h_{s}\,\sqrt{\frac{{l_{s}}^2}{{h_{s}}^2}+1}}\right)}{h_{s}\,m\,\sqrt{\frac{{l_{s}}^2}{{h_{s}}^2}+1}} & -\frac{F_{t}\,r_{n}}{m\,\left(h_{n}+r_{n}\right)\,\left(\frac{\phi ^2\,{r_{n}}^2}{{\left(h_{n}+r_{n}\right)}^2}+1\right)}\\ 0 & 0 & 0\\ \frac{1}{m} & -\frac{l_{s}\,\left(\frac{1}{\sqrt{\frac{{l_{s}}^2}{{h_{s}}^2}+1}}-\frac{l_{s}\,\theta }{h_{s}\,\sqrt{\frac{{l_{s}}^2}{{h_{s}}^2}+1}}\right)}{h_{s}\,m\,\sqrt{\frac{{l_{s}}^2}{{h_{s}}^2}+1}} & 0\\ 0 & 0 & 0\\ -\frac{\left(\phi -\mathrm{atan}\left(\frac{\phi \,r_{n}}{h_{n}+r_{n}}\right)\right)\,\sqrt{{h_{n}}^2+2\,h_{n}\,r_{n}+{r_{n}}^2}}{I} & -\frac{\sqrt{{h_{s}}^2+{l_{s}}^2}}{I\,\sqrt{\frac{{l_{s}}^2}{{h_{s}}^2}+1}} & \frac{F_{t}\,\left(\frac{r_{n}}{\left(h_{n}+r_{n}\right)\,\left(\frac{\phi ^2\,{r_{n}}^2}{{\left(h_{n}+r_{n}\right)}^2}+1\right)}-1\right)\,\sqrt{{h_{n}}^2+2\,h_{n}\,r_{n}+{r_{n}}^2}}{I} \end{array}\right]
+\end{matrix}
+\end{align*}
+
+<p style="text-align: justify">Neste caso, avaliando-as nos pontos de equilíbrio, e definindo os parâmetros do foguetão:</p>
+\begin{align*}
+    l_s &= 1.85m\\
+    h_s &= h_n = 22.5m\\
+    m &= 550000/3\\
+    I &= \frac{m}{12}(3\,l_s^2+(h_s+h_n)^2) \\
+    g &= 9.8\\
+\end{align*}
+
+<p style="text-align: justify">Obtêm-se as matrizes:</p>
+
+\begin{align*}
+&A = \begin{bmatrix}
+0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & -9.8 & 0\\
+0 & 0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 & 0 & 0\\
+\end{bmatrix}
+&B = \begin{bmatrix}
+0 & 0 & 0\\
+0 & 3.6628e^{-8} & -0.3365\\
+0 & 0 & 0\\
+5.4545e^{-6} & -4.4547e^{-7} & 0\\
+0 & 0 & 0\\
+0 & -7.2360e^{-7} &-1.3001\\
+\end{bmatrix}
+\end{align*}
+
+<p style="text-align: justify">Portanto, o nosso sistema, em notação de espaço de estados, é dado por:</p>
+
+$$\begin{bmatrix}
+\frac{dx}{dt}  \\ \frac{dv_x}{dt} \\ \frac{dy}{dt} \\ \frac{dv_y}{dt}  \\ \frac{d\theta}{dt}  \\ \frac{d\omega}{dt} 
+\end{bmatrix}
+ = \begin{bmatrix}
+0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & -9.8 & 0\\
+0 & 0 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0 & 0 & 1\\
+0 & 0 & 0 & 0 & 0 & 0\\
+\end{bmatrix}
+ \begin{bmatrix}
+ x \\ v_x \\ y \\ v_y \\ \theta \\ \omega \\
+ \end{bmatrix}
+ + 
+ \begin{bmatrix}
+0 & 0 & 0\\
+0 & 3.6628e^{-8} & -0.3365\\
+0 & 0 & 0\\
+5.4545e^{-6} & -4.4547e^{-7} & 0\\
+0 & 0 & 0\\
+0 & -7.2360e^{-7} &-1.3001\\
+\end{bmatrix}
+ \begin{bmatrix}
+ F_t \\ F_s \\ \varphi
+ \end{bmatrix}
+$$
+
+$$ \begin{bmatrix}
+ x \\ v_x \\ y \\ v_y \\ \theta \\ \omega \\
+ \end{bmatrix} = \begin{bmatrix} 
+ 1 & 0 & 0 & 0 & 0 & 0 \\
+ 0 & 1 & 0 & 0 & 0 & 0\\
+ 0 & 0 & 1 & 0 & 0 & 0 \\
+ 0 & 0 & 0 & 1 & 0 & 0 \\
+ 0 & 0 & 0 & 0 & 1 & 0 \\
+ 0 & 0 & 0 & 0 & 0 & 1 \\
+ \end{bmatrix}
+ \begin{bmatrix}
+ x \\ v_x \\ y \\ v_y \\ \theta \\ \omega \\
+ \end{bmatrix}
+ + 
+\begin{bmatrix} 
+ 0 & 0 & 0  \\
+ 0 & 0 & 0  \\
+ 0 & 0 & 0  \\
+ 0 & 0 & 0  \\
+ 0 & 0 & 0  \\
+ 0 & 0 & 0  \\
+ \end{bmatrix}
+ \begin{bmatrix}
+ F_t \\ F_s \\ \varphi
+ \end{bmatrix}
+$$
+</div>
+
+<div class="ae-container-fluid">
+  <div class="ae-grid ae-grid--collapse rk-portfolio-info " style="margin-top: 15%;">
+    <div class="ae-grid__item item-lg-6 item-sm--center au-xs-ta-center au-lg-ta-left item-lg--offset-1" style="margin-left: 1.53%;">
+      <h2 style="color:#C66A03;">Controlo PID</h2>
+      <h2>&nbsp;</h2>
+      
+    </div>
+  </div>
+</div>
+<div class="ae-container-fluid ae-container-fluid--inner ">
+
+
+      
+      <p  style="text-align: justify"> O controlador PID responde em função do erro. Este erro é o resultado da comparação de uma ou mais variáveis de estado com um valor de referência. A resposta do controlador, como o nome indica, tem três tipos: proporcional ao erro atual (P), proporcional ao acumular do erro no tempo, ou seja, o seu integral (I) e proporcional à variação do erro, isto é, à sua derivada (D). A função do controlador é minimizar o erro, ou seja, levar uma variável de estado para um dado valor. Este valor pode ser fixo no tempo ou variar com ele.</p>
+<p style="text-align: justify">Os controladores não necessitam de ter as três componentes P, I e D. No nosso caso, apenas se utilizou as componentes P e D. De forma geral, a componente P foi utilizada para levar uma dada variável de estado ao valor pretendido e a componente D foi responsável por impedir <i>overshoots</i>.
+  <p style="text-align: justify"> Todos PIDs foram calibrados manualmente, com apenas um ligado de cada vez, isto pois os métodos de Ziegler-Nichols não funcionavam neste sistema: em malha aberta o sistema apresenta uma resposta instável e em malha fechada, com controlo somente proporcional, apresenta um regime marginalmente estável para qualquer valor de $K_P$.</p>
+  <p style="text-align: justify">Numa primeira instância, deu-se a cada input uma função distinta: o <i>main thruster</i> era responsável por controlar a posição em y do foguetão; os <i>side thrusters</i> responsáveis pela deslocação deste ao longo dos eixos do xx e o ângulo de gimbal mantinha o foguetão o mais vertical possível.
+  <p style="text-align: justify">No entanto, esta divisão de funções não foi suficiente, pelo que se fizeram modificações, que a seguir se explicam.</p>
+  </div>
+
+  <div class="ae-container-fluid">
+    <div class="ae-grid ae-grid--collapse rk-portfolio-info " style="margin-top: 15%;">
+      <div class="ae-grid__item item-lg-6 item-sm--center au-xs-ta-center au-lg-ta-left item-lg--offset-1" style="margin-left: 1.53%;">
+        <h2 style="color:#C66A03;">Controlo do <i>Main Thruster</i>($F_T$)</h2>
+        <h2>&nbsp;</h2>
+        
+      </div>
+    </div>
+  </div>
+  <div class="ae-container-fluid ae-container-fluid--inner ">
+
+    <p  style="text-align: justify">O <i>Main Thruster</i> é responsável por fazer decrescer a altitude do foguetão controladamente. Por defeito, este exerce uma força igual à do peso do foguetão (tal deve-se à linearização do sistema que foi feita), ou seja, um input positivo de $F_T$ corresponde a exercer uma força superior à do peso do foguetão, fazendo-o acelerar para cima, e um output negativo corresponde a exercer uma força inferior à do peso, fazendo-o descer.</p>
+    <p  style="text-align: justify">Sendo assim é fácil perceber o que fazer: quanto maior a altitude do foguetão, mais rápido ele pode decrescer e mais baixo pode ser $F_T$ (controlo proporcional), mas se a velocidade a que ele desce for demasiado elevada, temos de acelerar o foguetão para cima e aplicar forças elevadas (controlo derivativo).</p>
+    <p  style="text-align: justify">No entanto, existe um pormenor bastante importante no que diz respeito a descer o foguetão: o foguetão tem de aterrar na plataforma. Posto isto, este não pode continuar a diminuir a sua altitude a não ser que esteja na posição correta. Para isso definiu-se uma variável de referência dinâmica que depende da posição em x do foguetão em cada instante e da sua posição inicial, servindo como que uma trajetória para este seguir até à plataforma. Esta trajetória é composta por três partes: uma função sinusoidal cujo ponto mais baixo corresponde ao centro do alvo, uma função parabólica que vai desde os limites da plataforma até à posição inicial em x do foguetão e uma função constante para distâncias superiores à distância inicial ao alvo em x.</p>
+
+    <div class="ae-grid ae-grid--collapse">
+      <div class="ae-grid__item item-lg-12"><img src="assets/img/ref_variavel.png" ></div>
+      <div class="ae-grid__item item-lg-5 item-lg--offset-1 ">
+  </div>
+
+<p  style="text-align: justify">De forma a implementar isto no Simulink, utilizaram-se os seguintes blocos:</p>
+
+<div class="ae-grid ae-grid--collapse">
+  <div class="ae-grid__item item-lg-12"><img src="assets/img/Main_thruster_blocos_final.png" ></div>
+  <div class="ae-grid__item item-lg-12 ">
+    <video src="./assets/img/VIDEO 1 - Main thruster.mp4" controls style="width: 100%;height: 100%;"></video>
+</div>
+</div>
+
+<div class="ae-container-fluid">
+  <div class="ae-grid ae-grid--collapse rk-portfolio-info " style="margin-top: 15%;">
+    <div class="ae-grid__item item-lg-6 item-sm--center au-xs-ta-center au-lg-ta-left item-lg--offset-1" style="margin-left: 1.53%;"> 
+      <h2 style="color:#C66A03;">Controlo do <i>Gimbal</i> ($\varphi$)</h2>
+      <h2>&nbsp;</h2>
+    </div>
+  </div>
+</div>
+<div class="ae-container-fluid ae-container-fluid--inner ">
+
+  <p  style="text-align: justify"> O <i>Gimbal</i> é responsável por controlar a direção na qual o <i>Main Thruster</i> aponta, ou seja, este define em que direção a força dele é aplicada no foguetão. Quanto mais próximo de 0 for este ângulo, mais esta força contribui para a translação do corpo, por outro lado, quanto mais afastado mais contribui para a rotação.</p>
+  <p  style="text-align: justify">Numa primeira instância parameterizou-se um PD que controlasse a inclinação do foguetão, diminuindo-a para um ângulo entre $\pm2^\circ$, isto é, o erro era calculado comparando a inclinação num dado instante, $theta$, com a referência, $0^\circ$. Para ângulos inferiores, o PD contém uma <i>deadzone</i>, ou seja, não atua. Assim, é permitido ao foguetão manter alguma inclinação de forma a transladar para a zona da plataforma.</p>
+  <p  style="text-align: justify">Ao efetuar alguns testes, no entanto, tornou-se óbvio um problema: quando era dada alguma velocidade inicial ao foguetão, este não conseguia "travar", ou quando começava bastante longe da plataforma, demorava muito tempo a mover-se para o centro. Posto isto, parameterizou-se ainda outro PD, responsável por inclinar o foguetão de forma a controlar a sua velocidade de translação, quer para acelerá-lo em direção ao alvo, quer para diminuir a sua velocidade. Este calcula o erro comparando a posição atual em $x$ do corpo em relação à posição do alvo, 0.</p>
+  <p  style="text-align: justify">Para garantir um funcionamento mais realista, foi adicionado à saída dos PDs um filtro passa-baixo para suavizar as variações do <i>Gimbal</i> e impedir descontinuidades. Isto porque, num sistema real, uma variação do ângulo não é instantânea e está limitada mecanicamente.</p>
+  <p  style="text-align: justify">Em suma, como já foi dito, quando a inclinação é muito pequena o controlo de inclinação é desligado e apenas funciona o controlo do movimento de translação; quando estamos em ângulos de inclinação maiores, ambos os PD's funcionam em conjunto, sendo o seu output somado. Desta forma, obtém-se um bom controlo da inclinação e da velocidade de translação; quando entramos na zona do alvo, é desligado o PD de controlo da translação para mantermos o foguetão o mais vertical possível para a aterragem.</p>
+
+  <div class="ae-grid ae-grid--collapse">
+    <div class="ae-grid__item item-lg-12" style="text-align: center;"><img src="assets/img/Gimbal_blocos_final.png" ></div>
+    <div class="ae-grid__item item-lg-12 ">
+      <video src="./assets/img/VIDEO 2 & 3 - gimbal.mp4" controls style="width: 100%;height: 100%;"></video>
+  </div>
+  </div>
+
+  <div class="ae-container-fluid">
+    <div class="ae-grid ae-grid--collapse rk-portfolio-info " style="margin-top: 15%;">
+      <div class="ae-grid__item item-lg-6 item-sm--center au-xs-ta-center au-lg-ta-left item-lg--offset-1" style="margin-left: 1.53%;">
+        <h2 style="color:#C66A03;">Controlo dos <i>Side Thrusters</i> ($F_s$)</h2>
+        <h2>&nbsp;</h2>
+      </div>
+    </div>
+  </div>
+  <div class="ae-container-fluid ae-container-fluid--inner ">
+  
+    <p  style="text-align: justify">Os <i>Side Thrusters</i> são os propulsores mais fracos do foguetão, tendo, por isso, pouca influência no seu movimento. No entanto, são responsáveis por pequenas correções que, embora subtis, fazem a diferença.</p>
+    <p  style="text-align: justify"> No nosso caso, utilizamos os <i>Side Thrusters</i> somente para realizar pequenas correções da inclinação, de forma a controlar a translação do corpo, fazendo-o acelerar para a esquerda ou direita, consoante a sua posição. Assim, a referência utilizada é a posição em $x$ da plataforma e o erro é calculado comparando esta com a posição instantânea do foguetão.</p>
+    <p  style="text-align: justify">Os <i>Side Thrusters</i> por si só não controlam com sucesso o movimento do foguetão, deixando-o instável. No entanto, a sua utilização juntamente com os restantes PDs garante um controlo mais eficiente.</p>
+
+    <div class="ae-grid ae-grid--collapse">
+      <div class="ae-grid__item item-lg-12" style="text-align: center;"><img src="assets/img/side_thruster_blocos_final.png" ></div>
+      <div class="ae-grid__item item-lg-12 ">
+        <video src="./assets/img/VIDEO 4 & 5 - SIDE.mp4" controls style="width: 100%;height: 100%;"></video>
+    </div>
+</div>
+
+<div class="ae-container-fluid">
+  <div class="ae-grid ae-grid--collapse rk-portfolio-info " style="margin-top: 15%;">
+    <div class="ae-grid__item item-lg-6 item-sm--center au-xs-ta-center au-lg-ta-left item-lg--offset-1" style="margin-left: 1.53%;">
+      <h2 style="color:#C66A03;">Simulações</h2>
+      <h3 style="color: #e9a841;font-size: 1.7rem;">Limites da simulação</h3>
+      <h3>&nbsp;</h3>
+    </div>
+  </div>
+</div>
+<div class="ae-container-fluid ae-container-fluid--inner ">
+
+  <p  style="text-align: justify">  Em condições normais, o nosso modelo consegue simular com alguma precisão o processo de aterragem do foguetão, por exemplo, utilizando as seguintes condições iniciais:</p>
+
+  <ul>
+    <li>Posição em $x = 90m$;</li>
+    <li>Velocidade em x $= 5m/s$;</li>
+    <li>Posição em y = $170m$;</li>
+    <li> Velocidade em y = $-20 m/s$;</li>
+    <li>Inclinação do foguetão = $-15º$;</li>
+    <li>Velocidade angular = $-10º/s$;</li>
+    </ul>
+ 
+    <p  style="text-align: justify">Traduzindo estas condições para algo mais intuitivo, isto quer dizer que o foguetão está a começar do lado direito do ecrã com alguma velocidade para a direita, a 170 metros de altura enquanto cai. Juntamente com isto, tem uma inclinação de 15 graus e está a girar com alguma velocidade no sentido dos ponteiros do relógio.</p>
+    <p  style="text-align: justify">Estas condições implicam que, inicialmente, o foguetão desça até ficar apenas a poucos metros de altitude, enquanto estabiliza a rotação, mantendo-se numa orientação vertical. Assim que esteja estabilizado, desloca-se lentamente para a plataforma, aterrando. Através do vídeo, podemos ver que todo o movimento parece bastante fluído e natural, o que indica que o modelo está suficientemente realista.</p>
+    
+    <div class="video1">
+      <video controls src="./assets/img/VIDEO 6 - cond normais.mp4" style="width: 100%;height:100%;"></video>
+  </div>
+    
+  <p  style="text-align: justify">O modelo tem algumas limitações, isto pois, no seu desenvolvimento, foram efetuadas aproximações para ângulos pequenos. Desta forma, este só é válido para inclinações do foguetão inferiores a 30º. Mesmo assim, isto já corresponde a um erro relativo de 5%, pelo que é de evitar condições em que os ângulos se aproximem do limite, que é o que pode ser evidenciado utilizando estas condições iniciais:</p>
+
+  <ul>
+    <li>Posição em x = $-90m$;</li>
+    <li>Velocidade em x = $0m/s$;</li>
+    <li>Posição em y = $170m$;</li>
+    <li> Velocidade em y = $0m/s$;</li>
+    <li>Inclinação do foguetão = $180º$;</li>
+    <li>Velocidade angular = $0º/s$;</li>
+    </ul>
+
+    <p  style="text-align: justify"> Traduzindo estas condições para algo mais intuitivo, isto quer dizer que o foguetão está a começar do lado esquerdo do ecrã , a 170 metros de altura e estacionário. No entanto, tem uma inclinação de 180 graus, ou seja, está virado do avesso. Está, portanto, muito fora do limite acima definido e está também muito fora do que seria uma situação real (se um foguetão chegar tão perto do chão virado ao contrário, temos um problema muito grande - MUITO GRANDE).</p>
+    <p  style="text-align: justify"> Embora o movimento pareça fluído (e o foguetão efetivamente aterre), é muito pouco natural. Isto é evidenciado no vídeo onde podemos observar que o foguetão começa virado do avesso e, no entanto, não desce nos instantes seguintes como seria de esperar.</p>
+
+    <div class="video1">
+      <video controls src="./assets/img/VIDEO 7 - cond impossible.mp4" style="width: 100%;height:100%;"></video>
+  </div>
+
+  <h3>&nbsp;</h3>
+  <h3 style="color: #e9a841;font-size: 1.7rem;">Simulação para várias Condições Iniciais</h3>
+      <h3>&nbsp;</h3>
+  
+      <p  style="text-align: justify">De forma a testar a robustez do controlo desenvolvido, testou-se o modelo com condições iniciais aleatórias dentro de parâmetros nos limites da simulação. Ou seja:</p>
+
+      <ul>
+        <li>$x_0\:\in\:[-100;\;100]\:m$</li>
+        <li>$v_{x_0}\:\in\:[-25;\;25]\:m/s$</li>
+        <li>$y_0\:\in\:[50;\;220]\:m$</li>
+        <li>$v_{y_0}\:\in\:[50;\;220]\:m/s$</li>
+        <li>$\theta_0\:\in\:[-30;\;30]\:^\circ$</li>
+        <li>$\omega_0\:\in\:[-25;\;25]\:^\circ/s$</li>
+        </ul>
+
+        <p  style="text-align: justify">O controlo mostrou-se bastante robusto, sendo capaz de estabilizar e controlar a aterragem do foguetão todas em todos os testes.</p>
+      
+        <video controls src="./assets/img/VIDEO 8 - Cond random.mp4" style="width: 100%;height:100%;"></video>
+
+</div>
+
+
+
+
+
+</section>
+
+
+
+
+
+<footer class="ae-container-fluid rk-footer ">
+  <div class="ae-grid ae-grid--collapse">
+    <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
+      <ul class="rk-menu rk-footer-menu">
+        <li class="rk-menu__item"><a href="index2.html" class="rk-menu__link">Página Inicial</a> </li>
+        <li class="rk-menu__item"><a href="https://codepen.io/EmiliaFins99/full/LYWNBQL" class="rk-menu__link" target="_blank">Glossário</a> </li>
+        <li class="rk-menu__item"><a href="https://soundcloud.com/teccom-hum/sets/g6-aterragem-vertical-de-um" class="rk-menu__link" target="_blank">Podcast</a> </li>
+      </ul>
+      
+    </div>
+    <div class="ae-grid__item item-lg-4 au-xs-ta-center"> </div>
+    <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
+      <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bolder">Teoria de Controlo & Linguística de Corpus</span>Universidade do Minho</p></span></p>
+   
+    </div>
+  </div>
+</footer>
+<script src="assets/js/svg4everybody.min.js"></script>
+<script>svg4everybody();</script>
+
+
+</body>
+</html>
